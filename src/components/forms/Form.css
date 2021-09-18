@@ -1,0 +1,12 @@
+.update-form-container {
+  display: flex;
+  justify-content: center;
+}
+.update-form-inner-container {
+  max-width: 700px;
+}
+.update-form {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+}

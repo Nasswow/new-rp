@@ -1,0 +1,44 @@
+{
+  "membersList": [
+    {
+      "name": "Nasser Ahmed",
+      "id": "22242",
+      "base": "Atlantic",
+      "position": "Operator",
+      "phone": "2064225741",
+      "email": "nass@gmail.com"
+    },
+    {
+      "name": "Abiy",
+      "id": "22243",
+      "base": "South",
+      "position": "Supervisor",
+      "phone": "2064225741",
+      "email": "nass@gmail.com"
+    },
+    {
+      "name": "Tefe",
+      "id": "22244",
+      "base": "North",
+      "position": "SIT",
+      "phone": "2064225741",
+      "email": "nass@gmail.com"
+    },
+    {
+      "name": "Deju",
+      "id": "22245",
+      "base": "Bellevue",
+      "position": "SIT",
+      "phone": "2064225741",
+      "email": "nass@gmail.com"
+    },
+    {
+      "name": "Ephi",
+      "id": "22246",
+      "base": "East",
+      "position": "Operator",
+      "phone": "2064225741",
+      "email": "nass@gmail.com"
+    }
+  ]
+}

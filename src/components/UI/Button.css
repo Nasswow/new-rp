@@ -1,0 +1,30 @@
+.bigButton {
+  background-color: #44cbb1;
+  opacity: 0.85;
+  padding: 10px 30px;
+  color: white;
+  border-radius: 5%;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 800;
+  margin: 10px auto;
+}
+.bigButton:hover {
+  opacity: 1;
+}
+.smallButton {
+  background-color: rgb(243, 243, 243);
+  opacity: 0.85;
+  padding: 5px;
+  color: Black;
+  border-radius: 10%;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 10px 5px;
+}
+.smallButton:hover {
+  opacity: 1;
+  background-color: #44cbb1;
+  color: white;
+}
