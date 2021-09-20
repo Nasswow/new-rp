@@ -1,0 +1,9 @@
+.footer-container {
+  height: 300px;
+  border: 1px dashed #44cbb1;
+  margin-top: 20px;
+  padding: 40px;
+}
+.footer {
+  height: 300px;
+}

@@ -1,15 +1,22 @@
+import { useState } from "react";
 import { Button, SmallButton } from "../UI/Button";
 import { useSelector, useDispatch } from "react-redux";
+import Form from "../forms/Form";
 import "./MembersList.css";
 const MembersList = (props) => {
+  const dispatch = useDispatch();
   const members = useSelector((state) => state.members);
-  const addNewMember = () => {
-    props.openUpdateForm();
+  const isAdmin = useSelector((state) => state.isAdmin);
+  const openForm = () => {
+    dispatch({ type: "OPEN_REGISTER_FORM" });
   };
+
+  const updateHandle = () => {};
   return (
     <div className="members-list-container">
-      <h1>ETEA Members</h1>
-      {/* <div className="members">
+      <h1 style={{ color: "#44cbb1", fontStyle: "italic" }}>ETEA Members</h1>
+      <Form />
+      <div className="members">
         {members.map((member) => (
           <div key={member.id} className="member-container">
             <div className="member-name">
@@ -17,41 +24,38 @@ const MembersList = (props) => {
             </div>
             <div
               onClick={() => {
-                props.imageClickHandler(member);
+                dispatch({ type: "MEMBER_DETAILS", payload: member });
               }}
               className="member-image"
-            ></div>
+            >
+              Image
+            </div>
             <div className="member-base">
               {member.base} Base {member.position}
             </div>
-            {props.admin && (
+            {isAdmin && (
               <div className="member-base">
                 <SmallButton
                   value="Update"
                   style={{ marginRight: "5px" }}
-                  onClick={() => {
-                    props.openUpdateForm(member);
-                    console.log(member);
-                  }}
+                  onClick={dispatch({
+                    type: "OPEN_UPDATE_FORM",
+                    payload: member,
+                  })}
                 />
                 <SmallButton
                   value="Delete"
                   onClick={() => {
-                    props.deleteHandler(member.id);
-                    console.log(member.id);
+                    dispatch({ type: "DELETE", payload: member });
                   }}
                 />
               </div>
             )}
           </div>
         ))}
-      </div> */}
-      {props.admin && (
-        <Button
-          value="Register New Members"
-          onClick={addNewMember}
-          type="submit"
-        />
+      </div>
+      {isAdmin && (
+        <Button onClick={openForm} value="Register New Members" type="submit" />
       )}
     </div>
   );

@@ -1,31 +1,15 @@
-.header-container {
-  background-color: rgb(243, 243, 243);
-  /* background: linear-gradient(
-    rgba(255, 0, 0, 0.5),
-    rgba(255, 255, 0, 0.5),
-    rgba(0, 128, 0, 0.5)
-  ); */
-}
 .header {
-  /* background-color: rgb(243, 243, 243); */
-  background: linear-gradient(
-    rgba(0, 128, 0, 0.1),
-    rgba(255, 255, 0, 0.1),
-    rgba(255, 0, 0, 0.1)
-  );
-  color: black;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: space-around;
   font-size: calc(10px + 2vmin);
   padding: 10px 20px;
 }
 .header-logo-container {
-  width: 20%;
-  text-align: left;
+  /* width: 20%; */
+  text-align: center;
   font-size: x-large;
   font-weight: 900;
-  color: darkcyan;
-  color: #44cbb1;
 }
 .logo {
   width: 150px;
@@ -50,25 +34,42 @@
   font-weight: 600;
   font-size: 20px;
   color: black;
-  color: #44cbb1;
+  font-style: italic;
 }
 .header-list:hover {
-  opacity: 0.75;
   cursor: pointer;
-  text-decoration: underline;
-  color: darkcyan;
+  color: #44cbb1;
+}
+
+.member-info {
+  font-size: 20px;
+  font-weight: 700;
+  font-style: italic;
+  text-align: right;
 }
 .header-btn {
-  color: darkcyan;
   color: #44cbb1;
   font-size: 20px;
   font-weight: 800;
+  padding-right: 20px;
+  font-style: italic;
 }
 .header-btn:hover {
   cursor: pointer;
-  opacity: 0.75;
+  color: #44cbb1;
 }
-
+.greenLine {
+  height: 3px;
+  background: rgba(0, 128, 0, 0.2);
+}
+.yellowLine {
+  height: 3px;
+  background: rgba(255, 255, 0, 0.2);
+}
+.redLine {
+  height: 3px;
+  background: rgba(255, 0, 0, 0.2);
+}
 @media only screen and (max-width: 700px) {
   .header-list-container {
     width: 100%;
@@ -99,5 +100,8 @@
   .header-logo-container {
     width: 100%;
     text-align: center;
+  }
+  .member-info {
+    text-align: left;
   }
 }

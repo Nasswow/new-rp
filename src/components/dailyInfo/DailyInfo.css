@@ -2,7 +2,11 @@
   display: flex;
   justify-content: space-between;
   padding: 10px 20px;
-  background: rgba(0, 128, 0, 0.1);
+  /* background: rgba(0, 128, 0, 0.1); */
+  /* background: black; */
+  /* color: white; */
+  padding: 5px 20px;
+  border: 1px solid rgba(0, 128, 0, 0.2);
 }
 .dailyInfo-day {
   font-size: 20px;

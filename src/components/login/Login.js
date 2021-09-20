@@ -1,29 +1,34 @@
 import React, { useState, useRef } from "react";
+import { useDispatch } from "react-redux";
 import "./login.css";
-import { Button, SmallButton } from "../UI/Button";
-const Login = (props) => {
-  const [isAuth, setIsAuth] = useState(false);
-  const [email, setEmail] = useState("");
+import { Button } from "../UI/Button";
+const Login = () => {
+  const dispatch = useDispatch();
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const emailInput = useRef("");
   const passwordInput = useRef("");
 
   const emailChangeHandler = (e) => {
-    setEmail(e.target.value);
+    setUsername(e.target.value);
+    setErrorMessage("");
   };
   const passwordChangeHandler = (e) => {
     setPassword(e.target.value);
+    setErrorMessage("");
   };
   const loginHandler = (e) => {
     e.preventDefault();
-    if (email.trim().length === 0 || password.trim().length < 6) {
+    if (username.trim().length === 0 || password.trim().length < 6) {
+      setErrorMessage("Your Email or Password is not Valid");
       return;
     }
     if (password === "admin123") {
-      props.isAdmin(true);
+      dispatch({ type: "ADMIN_LOGIN", payload: username });
     }
-    props.isAuth(true);
-    setEmail("");
+    dispatch({ type: "LOGIN", payload: username });
+    setUsername("");
     setPassword("");
   };
   return (
@@ -31,17 +36,15 @@ const Login = (props) => {
       <form className="login-form">
         <div className="login-input-container">
           <div className="login-label-input-container">
-            {/* <label className="login-label">Enter your email</label> */}
             <input
               placeholder="Enter Your Email"
-              value={email}
+              value={username}
               onChange={emailChangeHandler}
               ref={emailInput}
               className="login-input"
             />
           </div>
           <div>
-            {/* <label className="login-label">Enter your password</label> */}
             <input
               placeholder="Enter Your Password"
               value={password}
@@ -50,6 +53,7 @@ const Login = (props) => {
               className="login-input"
             />
           </div>
+          <div style={{ color: "red" }}>{errorMessage}</div>
           <Button
             onClick={loginHandler}
             className="login-btn"
@@ -57,16 +61,7 @@ const Login = (props) => {
             value="Login"
           />
 
-          <span>
-            Not a member ?{" "}
-            <SmallButton
-              onClick={props.notMemberHandler}
-              className="reg-btn"
-              type="button"
-              value="Register"
-            />
-            {/* <button onClick={props.notMemberHandler}>Register</button> */}
-          </span>
+          <span>Not a member ? Call us to JOIN our team at 206 XXX XXXX.</span>
         </div>
       </form>
     </div>

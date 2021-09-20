@@ -2,9 +2,12 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import "./Header.css";
 import logo from "../../images/ETEA-logos_transparent.png";
+
 const Header = (props) => {
   const isAuth = useSelector((state) => state.isAuth);
+  const loggedMember = useSelector((state) => state.loggedMember);
   const dispatch = useDispatch();
+
   const logoutHandler = () => {
     dispatch({ type: "LOGOUT" });
   };
@@ -22,9 +25,23 @@ const Header = (props) => {
             <li className="header-list">More Info</li>
           </ul>
         )}
-        <div onClick={logoutHandler} className="header-btn">
-          Logout
-        </div>
+        {isAuth && (
+          <div onClick={logoutHandler} className="header-btn">
+            Logout
+          </div>
+        )}
+      </div>
+      {!isAuth && (
+        <h1 style={{ color: "#44cbb1", fontStyle: "italic" }}>
+          Ethiopian Transit Employees Association{" "}
+        </h1>
+      )}
+
+      <div style={{ padding: "0 20px" }}>
+        {isAuth && <div className="member-info">Welcome, {loggedMember}!</div>}
+        <div className="greenLine"></div>
+        <div className="yellowLine"></div>
+        <div className="redLine"></div>
       </div>
     </div>
   );

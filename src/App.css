@@ -13,15 +13,6 @@
   }
 }
 
-.header {
-  background-color: white;
-  color: black;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  font-size: calc(10px + 2vmin);
-}
-
 .App-link {
   color: #61dafb;
 }

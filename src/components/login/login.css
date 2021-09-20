@@ -1,7 +1,6 @@
 .login-container {
   display: flex;
-  background-color: white;
-  height: 80vh;
+  margin-top: 100px;
 }
 .login-form {
   display: flex;

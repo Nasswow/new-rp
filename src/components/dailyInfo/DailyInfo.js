@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import "./DailyInfo.css";
 const DailyInfo = () => {
   const now = new Date();
   const [time, setTime] = useState(now);
   const [day, setDay] = useState(now);
-
   const today = now.getDay();
+  const dayOfMonth = now.getDate();
   const month = now.getMonth();
   const year = now.getFullYear();
   const hour = now.getHours();
@@ -89,8 +90,11 @@ const DailyInfo = () => {
     default:
       break;
   }
+  console.log(today);
 
-  const dayInfo = `${dayOfweek} ${monthOfYear} ${today}, ${year} `;
+  const test = new Date();
+  console.log(test.getDay());
+  const dayInfo = `${dayOfweek} ${monthOfYear} ${dayOfMonth}, ${year} `;
   const timeInfo = `${hour}:${minute}:${newSecond}`;
   useEffect(() => {
     setInterval(() => {

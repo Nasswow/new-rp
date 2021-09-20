@@ -5,8 +5,18 @@
 .update-form-inner-container {
   max-width: 700px;
 }
+.update-cancel-btn {
+  display: flex;
+  justify-content: space-between;
+}
+
 .update-form {
   display: flex;
   flex-flow: wrap;
   justify-content: center;
+}
+.input-label-container {
+  display: flex;
+  justify-content: left;
+  margin: auto 10px;
 }
