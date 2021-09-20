@@ -1,9 +1,26 @@
 .footer-container {
-  height: 300px;
   border: 1px dashed #44cbb1;
   margin-top: 20px;
-  padding: 40px;
+  padding: 20px 30px;
 }
 .footer {
-  height: 300px;
+}
+.footer-top {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.footer-link-ul {
+  text-align: left;
+}
+.footer-link-ul li {
+  list-style: none;
+  padding: 4px 0;
+}
+.footer-link-ul li a {
+  text-decoration: none;
+  color: #44cbb1;
+}
+.footer-address {
+  color: #44cbb1;
 }
