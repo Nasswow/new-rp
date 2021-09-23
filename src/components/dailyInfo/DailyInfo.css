@@ -1,23 +1,23 @@
 /* .dailyInfo-container {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 20px;
-  padding: 5px 20px;
-  border: 1px solid rgba(0, 128, 0, 0.2);
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 20px;
+	padding: 5px 20px;
+	border: 1px solid rgba(0, 128, 0, 0.2);
 }
 .dailyInfo-day {
-  font-size: 20px;
-  font-weight: 800;
+	font-size: 20px;
+	font-weight: 800;
 }
 .dailyInfo-time {
-  font-size: 20px;
-  font-weight: 800;
+	font-size: 20px;
+	font-weight: 800;
 }
 @media only screen and (max-width: 700px) {
-  .dailyInfo-day {
-    font-size: 16px;
-  }
-  .dailyInfo-time {
-    font-size: 16px;
-  }
+	.dailyInfo-day {
+		font-size: 16px;
+	}
+	.dailyInfo-time {
+		font-size: 16px;
+	}
 } */

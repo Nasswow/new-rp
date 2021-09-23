@@ -1,19 +1,32 @@
+.header-container {
+	width: 98%;
+	margin: 0 auto;
+
+	/* box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+		0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+		0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+		0 100px 80px rgba(0, 0, 0, 0.12); */
+}
 .header {
 	display: flex;
 	align-items: center;
-	justify-content: space-around;
+	justify-content: space-between;
 	font-size: calc(10px + 2vmin);
 	padding: 10px 20px;
 }
 .header-logo-container {
-	/* width: 20%; */
 	text-align: center;
 	font-size: x-large;
 	font-weight: 900;
 }
 .logo {
-	width: 150px;
-	height: 150px;
+	width: 100px;
+	height: 100px;
+	border-radius: 100%;
+	box-shadow: 0px 3px 5px rgba(0, 128, 0, 0.5),
+		0px 3px 0px rgba(0, 128, 0, 0.048), 0px 6px 10px rgba(255, 255, 0, 0.5),
+		0 6px 0px rgba(255, 255, 0, 0.5), 0px 9px 15px rgba(255, 0, 0, 0.5),
+		0 9px 0px rgba(255, 0, 0, 0.5);
 }
 .header-logo-container:hover {
 	cursor: pointer;
@@ -35,6 +48,9 @@
 	font-size: 20px;
 	color: black;
 	font-style: italic;
+	text-decoration: none;
+	/* padding: 10px;
+	border-radius: 100%; */
 }
 .header-list:hover {
 	cursor: pointer;
@@ -43,16 +59,30 @@
 
 .member-info {
 	font-size: 20px;
-	font-weight: 700;
+	font-weight: 900;
 	font-style: italic;
 	text-align: right;
+	padding: 5px;
+	color: #44cbb1;
 }
 .header-btn {
-	color: #44cbb1;
 	font-size: 20px;
 	font-weight: 800;
-	padding-right: 20px;
 	font-style: italic;
+	height: 100px;
+	width: 100px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border-radius: 100%;
+	box-shadow: 0px 3px 5px rgba(0, 128, 0, 0.5),
+		0px 3px 0px rgba(0, 128, 0, 0.048), 0px 6px 10px rgba(255, 255, 0, 0.5),
+		0 6px 0px rgba(255, 255, 0, 0.5), 0px 9px 15px rgba(255, 0, 0, 0.5),
+		0 9px 0px rgba(255, 0, 0, 0.5);
+}
+.logout-link {
+	text-decoration: none;
+	color: black;
 }
 .header-btn:hover {
 	cursor: pointer;
@@ -60,15 +90,20 @@
 }
 .greenLine {
 	height: 3px;
-	background: rgba(0, 128, 0, 0.2);
+	background: rgba(0, 128, 0, 0.4);
 }
 .yellowLine {
 	height: 3px;
-	background: rgba(255, 255, 0, 0.2);
+	background: rgba(255, 255, 0, 0.4);
 }
 .redLine {
 	height: 3px;
-	background: rgba(255, 0, 0, 0.2);
+	background: rgba(255, 0, 0, 0.4);
+}
+.header-title {
+	color: #44cbb1;
+	font-style: italic;
+	margin: 5px auto;
 }
 @media only screen and (max-width: 700px) {
 	.header-list-container {
@@ -85,13 +120,11 @@
 	.header-list {
 		width: 100%;
 		margin-bottom: 15px;
-		border-bottom: 1px solid darkcyan;
 		display: flex;
 		justify-content: flex-start;
 	}
 	.header-list:hover {
 		text-decoration: none;
-		background-color: rgb(248, 248, 248);
 	}
 	.header-btn {
 		width: 100%;
@@ -103,5 +136,18 @@
 	}
 	.member-info {
 		text-align: left;
+	}
+	.logo {
+		width: 100px;
+		height: 100px;
+	}
+	.header-title {
+		font-size: 30px;
+	}
+}
+@media only screen and (max-width: 400px) {
+	.header-title {
+		font-size: 20px;
+		font-weight: 800;
 	}
 }

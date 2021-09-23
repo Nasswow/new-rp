@@ -1,14 +1,15 @@
-import React, { useState, useRef } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import './login.css';
 import { Button } from '../UI/Button';
+import Input from '../UI/Input';
 const Login = () => {
+	const members = useSelector(state => state.members);
+	const memberNames = members.map(member => member.name);
 	const dispatch = useDispatch();
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
 	const [errorMessage, setErrorMessage] = useState('');
-	const usernameInput = useRef('');
-	const passwordInput = useRef('');
 
 	const usernameChangeHandler = e => {
 		setUsername(e.target.value);
@@ -20,8 +21,14 @@ const Login = () => {
 	};
 	const loginHandler = e => {
 		e.preventDefault();
-		if (username.trim().length === 0 || password.trim().length < 6) {
-			setErrorMessage('Your Username or Password is not Valid');
+		if (
+			username.trim().length === 0 ||
+			!memberNames.includes(username.trim())
+		) {
+			setErrorMessage('Your username is not valid');
+			return;
+		} else if (password.trim().length < 6) {
+			setErrorMessage('Your Password is not Valid');
 			return;
 		} else if (password === 'admin123') {
 			dispatch({ type: 'ADMIN_LOGIN', payload: username });
@@ -37,20 +44,18 @@ const Login = () => {
 			<form className='login-form'>
 				<div className='login-input-container'>
 					<div className='login-label-input-container'>
-						<input
+						<Input
 							placeholder='Enter Your Username'
 							value={username}
 							onChange={usernameChangeHandler}
-							ref={usernameInput}
 							className='login-input'
 						/>
 					</div>
 					<div>
-						<input
+						<Input
 							placeholder='Enter Your Password'
 							value={password}
 							onChange={passwordChangeHandler}
-							ref={passwordInput}
 							className='login-input'
 						/>
 					</div>
@@ -61,8 +66,7 @@ const Login = () => {
 						type='submit'
 						value='Login'
 					/>
-
-					<span>Not a member ? Call us to JOIN our team at 206 XXX XXXX.</span>
+					<span>Not a member ? Call us to JOIN at 206 XXX XXXX.</span>
 				</div>
 			</form>
 		</div>
