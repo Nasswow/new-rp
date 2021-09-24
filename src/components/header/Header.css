@@ -69,36 +69,40 @@
 	font-size: 20px;
 	font-weight: 800;
 	font-style: italic;
+}
+.logout-link {
+	color: black;
 	height: 100px;
 	width: 100px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	border-radius: 100%;
+	text-decoration: none;
 	box-shadow: 0px 3px 5px rgba(0, 128, 0, 0.5),
 		0px 3px 0px rgba(0, 128, 0, 0.048), 0px 6px 10px rgba(255, 255, 0, 0.5),
 		0 6px 0px rgba(255, 255, 0, 0.5), 0px 9px 15px rgba(255, 0, 0, 0.5),
 		0 9px 0px rgba(255, 0, 0, 0.5);
 }
-.logout-link {
-	text-decoration: none;
-	color: black;
+.logout-link:hover {
+	color: #44cbb1;
 }
 .header-btn:hover {
 	cursor: pointer;
 	color: #44cbb1;
 }
 .greenLine {
-	height: 3px;
+	height: 1px;
 	background: rgba(0, 128, 0, 0.4);
 }
 .yellowLine {
-	height: 3px;
+	height: 1px;
 	background: rgba(255, 255, 0, 0.4);
 }
 .redLine {
-	height: 3px;
+	height: 1px;
 	background: rgba(255, 0, 0, 0.4);
+	margin-bottom: 20px;
 }
 .header-title {
 	color: #44cbb1;
@@ -126,9 +130,14 @@
 	.header-list:hover {
 		text-decoration: none;
 	}
+	.logout-link {
+		box-shadow: none;
+		height: auto;
+		width: auto;
+	}
 	.header-btn {
 		width: 100%;
-		text-align: end;
+		text-align: right;
 	}
 	.header-logo-container {
 		width: 100%;

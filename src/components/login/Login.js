@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import './login.css';
+import './Login.css';
 import { Button } from '../UI/Button';
 import Input from '../UI/Input';
 const Login = () => {
@@ -22,8 +22,8 @@ const Login = () => {
 	const loginHandler = e => {
 		e.preventDefault();
 		if (
-			username.trim().length === 0 ||
-			!memberNames.includes(username.trim())
+			username.trim().length === 0
+			// !memberNames.includes(username.trim())
 		) {
 			setErrorMessage('Your username is not valid');
 			return;
@@ -36,6 +36,7 @@ const Login = () => {
 		} else {
 			dispatch({ type: 'MEMBER_LOGIN', payload: username });
 		}
+		dispatch({ type: 'CLOSE_FORM' });
 		setUsername('');
 		setPassword('');
 	};

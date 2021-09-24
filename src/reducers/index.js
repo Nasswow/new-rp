@@ -1,17 +1,34 @@
 import data from '../../src/data.json';
 const reducer = (
 	state = {
-		members: data.membersList,
+		members: [],
 		isAuth: false,
 		isAdmin: false,
 		loggedMember: '',
-		updatingMember: { name: '', id: '', base: '', phone: '', email: '' },
-		selectedMember: { name: '', id: '', base: '', phone: '', email: '' },
+		updatingMember: {
+			name: '',
+			base: '',
+			phone: '',
+			email: '',
+			pic: '',
+			disc: '',
+		},
+		selectedMember: {
+			name: '',
+			base: '',
+			phone: '',
+			email: '',
+			pic: '',
+			disc: '',
+		},
 		isAdding: false,
 		isUpdating: false,
 	},
 	action
 ) => {
+	if (action.type === 'MEMBERS_FETCHED') {
+		return { ...state, members: action.payload };
+	}
 	if (action.type === 'ADD') {
 		return { ...state, members: [...state.members, action.payload] };
 	}
@@ -26,6 +43,8 @@ const reducer = (
 			...state,
 			isAdmin: false,
 			isAuth: true,
+			isAdding: false,
+			isUpdating: false,
 			loggedMember: action.payload,
 		};
 	}
@@ -34,6 +53,8 @@ const reducer = (
 			...state,
 			isAdmin: true,
 			isAuth: true,
+			isAdding: false,
+			isUpdating: false,
 			loggedMember: action.payload,
 		};
 	}

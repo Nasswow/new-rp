@@ -6,6 +6,7 @@ import { Button } from '../UI/Button';
 const Form = props => {
 	const dispatch = useDispatch();
 	const state = useSelector(state => state);
+	const updatingMember = useSelector(state => state.updatingMember);
 	const [updatedMember, setUpdatdMember] = useState(state.updatingMember);
 
 	const nameChangeHandler = e => {
@@ -13,9 +14,9 @@ const Form = props => {
 			return { ...currentMember, name: e.target.value };
 		});
 	};
-	const idChangeHandler = e => {
+	const urlChangeHandler = e => {
 		setUpdatdMember(currentMember => {
-			return { ...currentMember, id: e.target.value };
+			return { ...currentMember, pic: e.target.value };
 		});
 	};
 	const baseChangeHandler = e => {
@@ -33,34 +34,41 @@ const Form = props => {
 			return { ...currentMember, email: e.target.value };
 		});
 	};
+	const discChangeHandler = e => {
+		setUpdatdMember(currentMember => {
+			return { ...currentMember, disc: e.target.value };
+		});
+	};
 	const registerHandler = e => {
 		e.preventDefault();
-		const sameId = state.members.filter(
-			member => member.id === updatedMember.id
-		);
-
 		if (
 			updatedMember.name === '' ||
-			updatedMember.id === '' ||
+			updatedMember.pic === '' ||
 			updatedMember.base === '' ||
 			updatedMember.phone === '' ||
-			updatedMember.email === ''
+			updatedMember.email === '' ||
+			updatedMember.disc === ''
 		) {
 			alert('Please Enter All Required Fields');
 			return;
-		} else if (sameId[0]?.id === updatedMember.id) {
-			alert('Member ID Already Exist!!');
-			return;
 		}
+		fetch('https://etea-2075a-default-rtdb.firebaseio.com/membersList.json', {
+			method: 'POST',
+			body: JSON.stringify(updatedMember),
+			headers: { 'Content-Type': 'application/json' },
+		});
 		dispatch({ type: 'ADD', payload: updatedMember });
-		setUpdatdMember({ name: '', id: '', base: '', phone: '', email: '' });
-		// dispatch({ type: 'CLOSE_FORM' });
+		setUpdatdMember({
+			name: '',
+			pic: '',
+			base: '',
+			phone: '',
+			email: '',
+			disc: '',
+		});
 	};
 	const updateHandler = e => {
 		e.preventDefault();
-		const sameId = state.members.filter(
-			member => member.id === updatedMember.id
-		);
 		if (
 			JSON.stringify(state.updatingMember) === JSON.stringify(updatedMember)
 		) {
@@ -68,15 +76,27 @@ const Form = props => {
 			alert('No change has made to selected member!');
 		} else if (
 			updatedMember.name === '' ||
-			updatedMember.id === '' ||
+			updatedMember.pic === '' ||
 			updatedMember.base === '' ||
 			updatedMember.phone === '' ||
-			updatedMember.email === ''
+			updatedMember.email === '' ||
+			updatedMember.disc === ''
 		) {
 			alert('Please Enter All Required Inputs');
-		} else if (sameId[0]?.id === updatedMember.id) {
-			alert('Member ID Already Exist!!');
 		} else {
+			fetch('https://etea-2075a-default-rtdb.firebaseio.com/membersList.json', {
+				method: 'POST',
+				body: JSON.stringify(updatedMember),
+				headers: { 'Content-Type': 'application/json' },
+			});
+			fetch(
+				'https://etea-2075a-default-rtdb.firebaseio.com/membersList/' +
+					updatingMember.id +
+					'.json',
+				{
+					method: 'DELETE',
+				}
+			);
 			dispatch({ type: 'ADD', payload: updatedMember });
 			dispatch({ type: 'DELETE', payload: state.updatingMember });
 			dispatch({ type: 'CLOSE_FORM' });
@@ -105,9 +125,9 @@ const Form = props => {
 							<div className='input-label-container'>
 								<Input
 									className='form-input'
-									onChange={idChangeHandler}
-									placeholder='ID'
-									value={updatedMember.id}
+									onChange={urlChangeHandler}
+									placeholder='Image URL'
+									value={updatedMember.pic}
 								/>
 							</div>
 							<div className='input-label-container'>
@@ -132,6 +152,14 @@ const Form = props => {
 									onChange={emailChangeHandler}
 									placeholder='Email'
 									value={updatedMember.email}
+								/>
+							</div>
+							<div className='input-label-container'>
+								<Input
+									className='form-input'
+									onChange={discChangeHandler}
+									placeholder='Discription'
+									value={updatedMember.disc}
 								/>
 							</div>
 						</div>

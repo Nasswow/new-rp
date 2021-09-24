@@ -12,39 +12,50 @@ const Header = props => {
 	const logoutHandler = () => {
 		dispatch({ type: 'LOGOUT' });
 	};
+	const linkClickedHandler = () => {
+		dispatch({ type: 'CLOSE_FORM' });
+	};
 	return (
 		<div className='header-container'>
 			<div className='header'>
 				<div className='header-logo-container'>
-					<Link to='/'>
+					<Link onClick={linkClickedHandler} to='/'>
 						<img className='logo' src={logo} alt='logo' />
 					</Link>
 				</div>
 				{isAuth && (
 					<ul className='header-list-container'>
 						<li>
-							<Link to='/' className='header-list'>
+							<Link onClick={linkClickedHandler} to='/' className='header-list'>
 								Home
 							</Link>
 						</li>
 						<li>
-							<Link to='/departments' className='header-list'>
+							<Link
+								onClick={linkClickedHandler}
+								to='/departments'
+								className='header-list'
+							>
 								Departments
 							</Link>
 						</li>
 						<li>
-							<Link to='/about' className='header-list'>
+							<Link
+								onClick={linkClickedHandler}
+								to='/about'
+								className='header-list'
+							>
 								About
 							</Link>
 						</li>
 					</ul>
 				)}
 				{isAuth && (
-					<Link className='logout-link' to='/'>
-						<div onClick={logoutHandler} className='header-btn'>
+					<div onClick={logoutHandler} className='header-btn'>
+						<Link onClick={linkClickedHandler} className='logout-link' to='/'>
 							Logout
-						</div>
-					</Link>
+						</Link>
+					</div>
 				)}
 			</div>
 			{!isAuth && (
@@ -57,9 +68,9 @@ const Header = props => {
 				{isAuth && (
 					<div className='member-info'>Welcome, {loggedMember} 😀</div>
 				)}
-				{/* <div className='greenLine'></div>
+				<div className='greenLine'></div>
 				<div className='yellowLine'></div>
-				<div className='redLine'></div> */}
+				<div className='redLine'></div>
 			</div>
 		</div>
 	);

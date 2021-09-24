@@ -5,6 +5,7 @@ import homeBg from '../../images/ETEA-logos_transparent.png';
 import MembersList from '../members/MembersList';
 import Member from '../member/Member';
 import Departments from '../departments/Departments';
+import About from '../about/About';
 const Home = () => {
 	return (
 		<div className='home-container'>
@@ -18,6 +19,9 @@ const Home = () => {
 				</Route>
 				<Route path='/departments'>
 					<Departments />
+				</Route>
+				<Route path='/about'>
+					<About />
 				</Route>
 			</Switch>
 		</div>
