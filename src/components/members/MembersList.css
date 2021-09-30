@@ -2,16 +2,26 @@
 	padding: 0 20px;
 }
 .members-list-title {
-	color: #44cbb1;
+	color: #15232d;
 	font-style: italic;
 	font-size: 40px;
 	font-weight: 900;
+	margin-bottom: 20px;
+}
+.register-new-members-btn {
+	width: 100%;
+	text-align: right;
+}
+.register-btn {
+	background: #15232d;
 }
 @media only screen and (max-width: 700px) {
 	.members-list-title {
-		color: #44cbb1;
 		font-style: italic;
 		font-size: 25px;
 		font-weight: 900;
+	}
+	.register-new-members-btn {
+		text-align: center;
 	}
 }

@@ -67,7 +67,9 @@ const Login = () => {
 						type='submit'
 						value='Login'
 					/>
-					<span>Not a member ? Call us to JOIN at 206 XXX XXXX.</span>
+					<span style={{ color: '#fff' }}>
+						Not a member ? Call us to JOIN at 206 XXX XXXX.
+					</span>
 				</div>
 			</form>
 		</div>

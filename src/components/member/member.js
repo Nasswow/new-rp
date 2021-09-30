@@ -7,32 +7,24 @@ const Member = () => {
 	console.log(selectedMember);
 	return (
 		<div>
-			<h2 style={{ color: '#44cbb1', fontStyle: 'italic' }}>
+			<h3 style={{ color: '#44cbb1', fontStyle: 'italic' }}>
 				{selectedMember.name}'s Information
-			</h2>
+			</h3>
 			<div className='member-detail'>
 				<div className='member-detail-img-container'>
 					<img src={selectedMember.pic} alt='member details' />
 				</div>
 				<div className='member-details-container'>
-					<div className='member-detail-name'>
-						Member Name: {selectedMember.name}
-					</div>
-					<div className='member-detail-base'>
-						Current Base: {selectedMember.base}
-					</div>
-					<div className='member-detail-phone'>
-						Phone Number: {selectedMember.phone}
-					</div>
-					<div className='member-detail-email'>
-						Email Address: {selectedMember.email}
-					</div>
+					<div className='member-detail-name'>{selectedMember.name}</div>
 					<div className='member-detail-disc'>
-						Member Details: {selectedMember.disc}
+						{selectedMember.name} is currently an active member of ETEA.{' '}
+						{selectedMember.name} can be reached at
+						{selectedMember.phone} or
+						{selectedMember.email}.
 					</div>
 				</div>
 			</div>
-			<div style={{ textAlign: 'right', paddingRight: '70px' }}>
+			<div className='member-btn'>
 				<Link to='/'>
 					<Button className='member-detail-btn' value='Back to Members' />
 				</Link>

@@ -1,11 +1,6 @@
 .header-container {
-	width: 98%;
+	width: 100%;
 	margin: 0 auto;
-
-	/* box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-		0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
-		0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-		0 100px 80px rgba(0, 0, 0, 0.12); */
 }
 .header {
 	display: flex;
@@ -13,40 +8,37 @@
 	justify-content: space-between;
 	font-size: calc(10px + 2vmin);
 	padding: 10px 20px;
-}
-.header-logo-container {
-	text-align: center;
-	font-size: x-large;
-	font-weight: 900;
+	background: #15232d;
 }
 .logo {
-	width: 100px;
-	height: 100px;
+	background: #fff;
 	border-radius: 100%;
-	box-shadow: 0px 3px 5px rgba(0, 128, 0, 0.5),
-		0px 3px 0px rgba(0, 128, 0, 0.048), 0px 6px 10px rgba(255, 255, 0, 0.5),
-		0 6px 0px rgba(255, 255, 0, 0.5), 0px 9px 15px rgba(255, 0, 0, 0.5),
-		0 9px 0px rgba(255, 0, 0, 0.5);
-}
-.header-logo-container:hover {
-	cursor: pointer;
-	opacity: 0.75;
+	width: 60px;
+	height: 60px;
+	border-radius: 100%;
 }
 
+.logo:hover {
+	box-shadow: 0px 2px 0px rgba(0, 128, 0, 0.5),
+		0px 2px 0px rgba(0, 128, 0, 0.048), 0px 4px 0px rgba(255, 255, 0, 0.5),
+		0 4px 0px rgba(255, 255, 0, 0.5), 0px 6px 0px rgba(255, 0, 0, 0.5),
+		0 6px 0px rgba(255, 0, 0, 0.5);
+}
 .header-list-container {
-	width: 60%;
+	width: 70%;
 	display: flex;
 	list-style: none;
-	justify-content: space-around;
+	justify-content: space-between;
 	padding-left: 0;
 	padding-right: 20px;
+	align-items: center;
 }
 .header-list {
 	display: flex;
 	justify-content: center;
 	font-weight: 600;
 	font-size: 20px;
-	color: black;
+	color: #fff;
 	font-style: italic;
 	text-decoration: none;
 	/* padding: 10px;
@@ -58,33 +50,32 @@
 }
 
 .member-info {
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: 900;
 	font-style: italic;
 	text-align: right;
 	padding: 5px;
-	color: #44cbb1;
+	color: #15232d;
 }
-.header-btn {
-	font-size: 20px;
-	font-weight: 800;
-	font-style: italic;
-}
+
 .logout-link {
-	color: black;
-	height: 100px;
-	width: 100px;
+	background: white;
+	font-size: 16px;
+	height: 60px;
+	width: 60px;
+	font-weight: 800;
+	color: #15232d;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	border-radius: 100%;
 	text-decoration: none;
-	box-shadow: 0px 3px 5px rgba(0, 128, 0, 0.5),
-		0px 3px 0px rgba(0, 128, 0, 0.048), 0px 6px 10px rgba(255, 255, 0, 0.5),
-		0 6px 0px rgba(255, 255, 0, 0.5), 0px 9px 15px rgba(255, 0, 0, 0.5),
-		0 9px 0px rgba(255, 0, 0, 0.5);
 }
 .logout-link:hover {
+	box-shadow: 0px 2px 0px rgba(0, 128, 0, 0.5),
+		0px 2px 0px rgba(0, 128, 0, 0.048), 0px 4px 0px rgba(255, 255, 0, 0.5),
+		0 4px 0px rgba(255, 255, 0, 0.5), 0px 6px 0px rgba(255, 0, 0, 0.5),
+		0 6px 0px rgba(255, 0, 0, 0.5);
 	color: #44cbb1;
 }
 .header-btn:hover {
@@ -92,34 +83,38 @@
 	color: #44cbb1;
 }
 .greenLine {
-	height: 1px;
-	background: rgba(0, 128, 0, 0.4);
+	height: 2px;
+	background: rgba(0, 128, 0, 0.5);
 }
 .yellowLine {
-	height: 1px;
-	background: rgba(255, 255, 0, 0.4);
+	height: 2px;
+	background: rgba(255, 255, 0, 0.5);
 }
 .redLine {
-	height: 1px;
-	background: rgba(255, 0, 0, 0.4);
+	height: 2px;
+	background: rgba(255, 0, 0, 0.5);
 	margin-bottom: 20px;
 }
 .header-title {
-	color: #44cbb1;
+	color: #15232d;
 	font-style: italic;
 	margin: 5px auto;
 }
+
 @media only screen and (max-width: 700px) {
 	.header-list-container {
 		width: 100%;
 		flex-direction: column;
 		align-items: flex-start;
-		padding-left: 0;
-		margin: 0;
+		padding-left: 20px;
+		margin-top: 20px;
+	}
+	.collapsed {
+		display: none;
 	}
 	.header {
 		flex-direction: column;
-		align-items: flex-start;
+		align-items: center;
 	}
 	.header-list {
 		width: 100%;
@@ -134,21 +129,23 @@
 		box-shadow: none;
 		height: auto;
 		width: auto;
+		border-radius: 0;
+		background: #15232d;
+		color: #44cbb1;
 	}
-	.header-btn {
-		width: 100%;
-		text-align: right;
+	.logout-link:hover {
+		box-shadow: none;
+		opacity: 0.85;
 	}
+
 	.header-logo-container {
 		width: 100%;
-		text-align: center;
-	}
-	.member-info {
 		text-align: left;
+		cursor: pointer;
 	}
 	.logo {
-		width: 100px;
-		height: 100px;
+		width: 50px;
+		height: 50px;
 	}
 	.header-title {
 		font-size: 30px;

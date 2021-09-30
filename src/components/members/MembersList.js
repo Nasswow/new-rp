@@ -15,8 +15,9 @@ const MembersList = props => {
 			<div className='members-list-title'>Active ETEA Members</div>
 			<MembersListData />
 			{isAdmin && !isAdding && (
-				<div style={{ width: '100%', textAlign: 'right' }}>
+				<div className='register-new-members-btn'>
 					<Button
+						className='register-btn'
 						onClick={() => {
 							if (isUpdating) {
 								alert('Please close updating form first!!');

@@ -61,6 +61,9 @@ const Footer = () => {
 						<div className='footer-logo'>ETEA</div>
 					</div>
 				</div>
+				<div className='greenLine'></div>
+				<div className='yellowLine'></div>
+				<div className='redLine'></div>
 			</div>
 		</div>
 	);
