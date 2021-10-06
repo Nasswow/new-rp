@@ -5,8 +5,7 @@
 	margin-bottom: 50px;
 }
 .update-form-inner-container {
-	background: #15232d;
-	color: #fff;
+	/* background: #15232d; */
 	max-width: 700px;
 	padding: 20px;
 	border-radius: 20px;
@@ -32,5 +31,7 @@
 }
 .form-input {
 	min-width: 300px;
-	background: #fff;
+}
+.update-title{
+	color: #4A76C6;
 }

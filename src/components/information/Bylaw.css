@@ -1,0 +1,58 @@
+.bylaw-container{
+    padding: 20px 40px;
+    margin: 0 auto;
+    text-align: left;
+    /* border: 5px dashed #4A76C6; */
+
+}
+.bylaw-container h1{
+    text-align: center;
+    color: #4A76C6;
+}
+.bylaw-container h2{
+    color: #4A76C6;
+}
+.bylaw{
+    /* background: rgb(238, 238, 238); */
+    padding: 20px 30px;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+.first-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+}
+.bylaw-container h3{
+    line-height: 1.6;
+}
+.bylaw-container h5{ 
+    width: 80%;
+    margin: 0 auto;
+}
+.scroll-top{
+    position: fixed;
+    top: 200px;
+    right: 0px;
+    z-index: 1;
+    background: #4A76C6;
+    padding: 5px;
+    color: rgb(255, 255, 255);
+}
+.scroll-bottom{
+    position: fixed;
+    bottom: 200px;
+    right: 0px;
+    z-index: 1;
+    background: #4A76C6;
+    padding: 5px;
+    color: rgb(255, 255, 255);
+}
+@media only screen and (max-width: 400px) {
+	.header-title {
+		font-size: 20px;
+		font-weight: 800;
+	}
+}

@@ -8,10 +8,10 @@
 	justify-content: space-between;
 	font-size: calc(10px + 2vmin);
 	padding: 10px 20px;
-	background: #15232d;
+	/* background: #15232d; */
 }
 .logo {
-	background: #fff;
+	/* background: #fff; */
 	border-radius: 100%;
 	width: 60px;
 	height: 60px;
@@ -38,7 +38,7 @@
 	justify-content: center;
 	font-weight: 600;
 	font-size: 20px;
-	color: #fff;
+	color: #000;
 	font-style: italic;
 	text-decoration: none;
 	/* padding: 10px;
@@ -47,24 +47,30 @@
 .header-list:hover {
 	cursor: pointer;
 	color: #44cbb1;
+    color: #4A76C6;
+
 }
 
 .member-info {
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 900;
 	font-style: italic;
 	text-align: right;
 	padding: 5px;
-	color: #15232d;
+	color: #44cbb1;
+    color: #4A76C6;
+
 }
 
 .logout-link {
-	background: white;
+	/* background: white; */
 	font-size: 16px;
 	height: 60px;
 	width: 60px;
 	font-weight: 800;
-	color: #15232d;
+	color: #44cbb1;
+    color: #4A76C6;
+
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -77,10 +83,11 @@
 		0 4px 0px rgba(255, 255, 0, 0.5), 0px 6px 0px rgba(255, 0, 0, 0.5),
 		0 6px 0px rgba(255, 0, 0, 0.5);
 	color: #44cbb1;
+    color: #4A76C6;
+
 }
 .header-btn:hover {
 	cursor: pointer;
-	color: #44cbb1;
 }
 .greenLine {
 	height: 2px;
@@ -96,9 +103,11 @@
 	margin-bottom: 20px;
 }
 .header-title {
-	color: #15232d;
+	color: #4A76C6;
 	font-style: italic;
-	margin: 5px auto;
+	margin: 40px auto;
+	font-weight: 900;
+	font-size: 40px;
 }
 
 @media only screen and (max-width: 700px) {
@@ -130,8 +139,10 @@
 		height: auto;
 		width: auto;
 		border-radius: 0;
-		background: #15232d;
+		/* background: #15232d; */
 		color: #44cbb1;
+		color: #4A76C6;
+
 	}
 	.logout-link:hover {
 		box-shadow: none;

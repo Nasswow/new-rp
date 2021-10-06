@@ -14,7 +14,7 @@ function App() {
 			<Header />
 			{!isAuth && <Login />}
 			{isAuth && <Home />}
-			<Footer />
+			{isAuth && <Footer />}
 		</div>
 	);
 }

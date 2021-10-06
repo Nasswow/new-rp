@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import './Header.css';
-import logo from '../../images/ETEA-logos_transparent.png';
+import logo from '../../images/ETEA-final-logo.png';
 
 const Header = props => {
 	const [isCollapsed, setIsCollapsed] = useState(true);
@@ -14,12 +14,9 @@ const Header = props => {
 		dispatch({ type: 'LOGOUT' });
 	};
 	const linkClickedHandler = () => {
-		console.log('link clicked');
-
 		dispatch({ type: 'CLOSE_FORM' });
 	};
 	const logoClickedHandler = () => {
-		console.log('logo clicked handler');
 		if (window.innerWidth > 700) {
 			return;
 		}
@@ -27,7 +24,7 @@ const Header = props => {
 	};
 	return (
 		<div className='header-container'>
-			<div className='header'>
+			{isAuth && <div className='header'>
 				<div className='header-logo-container'>
 					<img
 						onClick={logoClickedHandler}
@@ -52,10 +49,10 @@ const Header = props => {
 						<li>
 							<Link
 								onClick={linkClickedHandler}
-								to='/departments'
+								to='/members'
 								className='header-list'
 							>
-								Departments
+								Members
 							</Link>
 						</li>
 						<li>
@@ -70,10 +67,10 @@ const Header = props => {
 						<li>
 							<Link
 								onClick={linkClickedHandler}
-								to='/more'
+								to='/bylaw'
 								className='header-list'
 							>
-								More
+								Bylaw
 							</Link>
 						</li>
 
@@ -90,16 +87,16 @@ const Header = props => {
 						)}
 					</ul>
 				)}
-			</div>
+			</div>}
 			{!isAuth && (
 				<h1 className='header-title'>
-					Ethiopian Transit Employees Association{' '}
+					እንኳን ደህና መጡ <br />የኢትዮጵያውያን ትራንዚት ሠራተኞች ማኅበር{' '}
 				</h1>
 			)}
 
 			<div style={{ padding: '0 20px' }}>
 				{isAuth && (
-					<div className='member-info'>Welcome, {loggedMember} 😀</div>
+					<div className='member-info'>Welcome, {loggedMember ? loggedMember : 'Please sign in'}</div>
 				)}
 				<div className='greenLine'></div>
 				<div className='yellowLine'></div>

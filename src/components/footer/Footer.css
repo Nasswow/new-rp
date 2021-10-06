@@ -1,5 +1,5 @@
 .footer-container {
-	background: #15232d;
+	/* background: #15232d; */
 
 	bottom: 0;
 	left: 0;
@@ -7,7 +7,7 @@
 	padding: 20px 30px;
 }
 .footer {
-	color: #fff;
+	/* color: #fff; */
 	/* box-shadow: 0px 2px 0px rgba(0, 128, 0, 0.3),
 		0px 2px 0px rgba(0, 128, 0, 0.048), 0px 4px 0px rgba(255, 255, 0, 0.3),
 		0 4px 0px rgba(255, 255, 0, 0.3), 0px 6px 0px rgba(255, 0, 0, 0.5),
@@ -45,7 +45,7 @@
 .footer-link-ul li a {
 	text-decoration: none;
 	font-weight: 500;
-	color: #fff;
+	color: #000;
 	font-style: italic;
 }
 .footer-address {

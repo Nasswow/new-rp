@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import "./register.css";
+import "./Register.css";
 import { Button, SmallButton } from "../UI/Button";
 const Register = (props) => {
   const [name, setName] = useState("");
