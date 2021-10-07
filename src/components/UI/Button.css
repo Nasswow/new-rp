@@ -1,7 +1,6 @@
 .bigButton {
 	background: #44cbb1;
     background: #4A76C6;
-	
 	padding: 10px;
 	border-radius: 10%;
 	cursor: pointer;
@@ -28,13 +27,11 @@
 	margin: 10px 5px;
 	border: 1px solid #44cbb1;
 	border: 1px solid #4A76C6;
-
 	background: none;
 }
 .smallButton:hover {
 	opacity: 1;
 	background-color: #44cbb1;
     background: #4A76C6;
-
 	color: white;
 }

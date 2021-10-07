@@ -1,23 +1,20 @@
 import React from 'react';
-import { Page, Text, View, Document, StyleSheet, PDFViewer } from '@react-pdf/renderer';
-import { Link } from 'react-router-dom';
 import './Bylaw.css';
-import PDFDocument from '../document/PDFDocument';
 const Bylaw = () => {
     const scrollTop = () => {
         window.scroll(0, 0)
     }
     const scrollBottom = () => {
-        window.scrollTo(0, 100000)
+        window.scrollTo(0, 50000)
     }
     return (
         <div className='bylaw-container'>
-            <div onClick={scrollTop} className='scroll-top'>Scroll to Top</div>
-            <div onClick={scrollBottom} className='scroll-bottom'>Scroll to Bottom</div>
+            <div onClick={scrollTop} className='scroll-top'>Top</div>
+            <div onClick={scrollBottom} className='scroll-bottom'>Bottom</div>
 
             <div className='bylaw'>
                 <div className='first-page'>
-                    <h1>---የኢትዮጵያውያን ትራንዚት ሠራተኞች ማኅበር---<br /><br />
+                    <h1>የኢትዮጵያውያን ትራንዚት ሠራተኞች ማኅበር<br /><br />
                 ETHIOPIAN TRANSIT EMPLOYEES ASSOCIATION<br /><br />
                 በኪንግ ካውንቲ ሜትሮ/In King County Metro መተዳደሪያ ደንብ /BYLAW/<br /><br />
                 ለ 4ተኛ ጊዜ የተሻሻለው REVISED 4TH EDITION<br /><br />

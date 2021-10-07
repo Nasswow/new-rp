@@ -5,7 +5,7 @@ const HomePage = () => {
     return (
         <div className='home-page'>
             <div>
-                {/* <h1 className='home-page'>እንኳን ደህና መጡ<br />የኢትዮጵያውያን ትራንዚት ሠራተኞች ማኅበር</h1> */}
+                <h1 className='home-page'>እንኳን ደህና መጡ</h1>
                 <img src={logo} />
             </div>
         </div>

@@ -3,9 +3,12 @@
 }
 .home-page img{
     width: 40%;
-    
 }
 .home-page h1{
-    color: #44cbb1;
+    color: #4a76C6;
 }
-.home-page {}
+@media only screen and (max-width: 700px) {
+    .home-page img{
+        width: 75%;
+    }
+}

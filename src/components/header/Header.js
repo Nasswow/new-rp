@@ -16,22 +16,24 @@ const Header = props => {
 	const linkClickedHandler = () => {
 		dispatch({ type: 'CLOSE_FORM' });
 	};
-	const logoClickedHandler = () => {
-		if (window.innerWidth > 700) {
-			return;
-		}
+	const burgerClickedHandler = () => {
 		setIsCollapsed(currentState => !currentState);
 	};
 	return (
 		<div className='header-container'>
 			{isAuth && <div className='header'>
 				<div className='header-logo-container'>
-					<img
-						onClick={logoClickedHandler}
+					<Link to='/'><img
 						className='logo'
 						src={logo}
 						alt='logo'
-					/>
+					/></Link>
+					<div onClick={burgerClickedHandler} className='header-burger'>
+						<div className='burger-line'></div>
+						<div className='burger-line'></div>
+						<div className='burger-line'></div>
+					</div>
+
 				</div>
 				{isAuth && (
 					<ul
@@ -53,15 +55,6 @@ const Header = props => {
 								className='header-list'
 							>
 								Members
-							</Link>
-						</li>
-						<li>
-							<Link
-								onClick={linkClickedHandler}
-								to='/about'
-								className='header-list'
-							>
-								About
 							</Link>
 						</li>
 						<li>
@@ -96,7 +89,7 @@ const Header = props => {
 
 			<div style={{ padding: '0 20px' }}>
 				{isAuth && (
-					<div className='member-info'>Welcome, {loggedMember ? loggedMember : 'Please sign in'}</div>
+					<div className='member-info'>Welcome, {loggedMember ? loggedMember.toUpperCase() : 'Please sign in'}</div>
 				)}
 				<div className='greenLine'></div>
 				<div className='yellowLine'></div>

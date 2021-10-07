@@ -5,7 +5,6 @@ import Login from './components/login/Login';
 import Header from './components/header/Header';
 import MembersList from './components/members/MembersList';
 import Footer from './components/footer/Footer';
-import Member from './components/member/Member';
 import Home from './components/home/Home';
 function App() {
 	const isAuth = useSelector(state => state.isAuth);

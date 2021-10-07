@@ -7,7 +7,7 @@ const Member = () => {
 	console.log(selectedMember);
 	return (
 		<div>
-			<h3 style={{ color: '#44cbb1', fontStyle: 'italic' }}>
+			<h3 style={{ color: '#4A76C6', fontStyle: 'italic' }}>
 				{selectedMember.name}'s Information
 			</h3>
 			<div className='member-detail'>
@@ -17,10 +17,10 @@ const Member = () => {
 				<div className='member-details-container'>
 					<div className='member-detail-name'>{selectedMember.name}</div>
 					<div className='member-detail-disc'>
-						{selectedMember.name} is currently an active member of ETEA.{' '}
-						{selectedMember.name} can be reached at
-						{selectedMember.phone} or
-						{selectedMember.email}.
+						{selectedMember.name} is currently an active member of ETEA.<br />
+						{selectedMember.name} can be reached at <br />
+						{selectedMember.phone + ' '} or
+						{' ' + selectedMember.email}.<br />
 					</div>
 				</div>
 			</div>

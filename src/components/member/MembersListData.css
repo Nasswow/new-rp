@@ -2,7 +2,9 @@
 	display: flex;
 	flex-flow: wrap;
 	align-items: center;
+	margin-top: 40px;
 	margin-bottom: 40px;
+
 }
 .member-container {
 	display: flex;
