@@ -23,7 +23,7 @@ const Login = () => {
 		e.preventDefault();
 		if (
 			username.trim().length === 0 ||
-			!memberNames.includes(username.trim().toUpperCase())
+			!memberNames.includes(username.trim())
 		) {
 			setErrorMessage('Your username is not valid');
 			return;

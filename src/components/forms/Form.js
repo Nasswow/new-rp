@@ -21,7 +21,7 @@ const Form = props => {
 	};
 	const baseChangeHandler = e => {
 		setUpdatdMember(currentMember => {
-			return { ...currentMember, base: e.target.value.toUpperCase() };
+			return { ...currentMember, base: e.target.value};
 		});
 	};
 	const phoneChangeHandler = e => {
