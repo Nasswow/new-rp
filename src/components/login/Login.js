@@ -12,7 +12,7 @@ const Login = () => {
 	const [errorMessage, setErrorMessage] = useState('');
 
 	const usernameChangeHandler = e => {
-		setUsername(e.target.value);
+		setUsername(e.target.value.toUpperCase());
 		setErrorMessage('');
 	};
 	const passwordChangeHandler = e => {
