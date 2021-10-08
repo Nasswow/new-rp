@@ -1,7 +1,7 @@
 {
   "name": "new-rp",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@react-pdf/renderer": "^1.6.17",
     "@testing-library/jest-dom": "^5.14.1",

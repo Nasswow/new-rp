@@ -8,20 +8,24 @@
     color: #4A76C6;
 }
 .bylaw-container h2{
+    text-align: center;
+    color: #4A76C6;
+}
+.bylaw-container h2{
     color: #4A76C6;
 }
 .bylaw{
-    padding: 20px 30px;
-    width: 80%;
     margin: 0 auto;
     border-radius: 10px;
 }
+
 .first-page{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     text-align: center;
 }
+
 .bylaw-container h3{
     line-height: 1.6;
 }
@@ -53,9 +57,30 @@
 .scroll-bottom:hover{
     cursor: pointer;;
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
 	.header-title {
 		font-size: 20px;
 		font-weight: 800;
-	}
+    }
+    .bylaw-container{
+        padding: 0 15px;
+        margin: 0 auto;
+        text-align: left;
+    }
+    .bylaw-container h1{
+        font-size: 24px;
+    }
+    .bylaw-container h2{
+        font-size: 20px;
+    }
+    .bylaw-container h3{
+        font-size: 12px;
+        text-align: center;
+    }
+    .bylaw-container h5{ 
+        width: 100%;
+    }
+    .bylaw-chapter h1{
+        font-size: 18px;
+    }
 }
